@@ -25,7 +25,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsListener {
         myButton.interactable = Advertisement.IsReady (myPlacementId); 
 
         // Map the ShowRewardedVideo function to the button’s click listener:
-        if (myButton) myButton.onClick.AddListener (ShowRewardedVideo);
+        if (myButton)
+			myButton.onClick.AddListener (ShowRewardedVideo);
 
         // Initialize the Ads listener and service:
         Advertisement.AddListener (this);
@@ -33,7 +34,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsListener {
     }
 
     // Implement a function for showing a rewarded video ad:
-    void ShowRewardedVideo () {
+    public void ShowRewardedVideo () {
         Advertisement.Show (myPlacementId);
     }
 
